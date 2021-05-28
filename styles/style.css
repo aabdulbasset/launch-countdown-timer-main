@@ -84,6 +84,13 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.card-back-text {
+  top: 50%;
+  z-index: 0;
+  color: #fb6087;
+  font-size: min(93px, 13vw);
+}
+
 .card-text {
   text-align: center;
   position: absolute;
@@ -105,10 +112,11 @@ html {
 .card-top {
   background-color: #2a2b41;
   position: absolute;
+  transform: rotateX(0deg);
+  transform-style: preserve-3d;
   top: 0;
   width: 100%;
   height: 50%;
-  transform: perspective(1000px);
   transform-origin: bottom;
   overflow: hidden;
 }
@@ -123,19 +131,17 @@ html {
 }
 
 .animating-top {
-  -webkit-animation: flipdown 0.5s forwards;
-          animation: flipdown 0.5s forwards;
+  -webkit-animation: flipdown 0.5s;
+          animation: flipdown 0.5s;
 }
 
 .animating-bottom {
-  transform: rotateX(90deg);
   animation: flipdown 0.5s reverse;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
 }
 
 .card-bottom {
   position: absolute;
+  background-color: #343650;
   top: 50%;
   width: 100%;
   height: 50%;
@@ -183,7 +189,7 @@ html {
     transform: rotateX(0);
   }
   to {
-    transform: rotateX(90deg);
+    transform: rotateX(91deg);
   }
 }
 @keyframes flipdown {
@@ -191,6 +197,6 @@ html {
     transform: rotateX(0);
   }
   to {
-    transform: rotateX(90deg);
+    transform: rotateX(91deg);
   }
 }/*# sourceMappingURL=style.css.map */
